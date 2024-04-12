@@ -112,7 +112,7 @@ class LoginScreen extends StatelessWidget {
             const SizedBox(height: 20),
             Center(
               child: ElevatedButton(
-                  onPressed: () => Navigator.pushNamed(context, '/dashboard'),
+                  onPressed: () => Navigator.pushNamed(context, '/my-homepage'),
                   style: ElevatedButton.styleFrom(
                       backgroundColor: Color.fromARGB(255, 85, 27, 124)),
                   child: const Text(

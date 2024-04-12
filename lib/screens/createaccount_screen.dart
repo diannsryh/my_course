@@ -26,7 +26,7 @@ class CreateAccount extends StatelessWidget {
             //   height: 10,
             // ),
             const Text(
-              'Create your accout',
+              'Create your account',
               style: TextStyle(
                 fontSize: 18,
                 color: Color.fromARGB(255, 53, 2, 63),
