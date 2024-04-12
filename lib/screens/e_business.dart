@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_course/component/assets_image_widget.dart';
 
-class ArnoDorian extends StatelessWidget {
-  const ArnoDorian({super.key});
+class EBusiness extends StatelessWidget {
+  const EBusiness({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'User Interface',
+          'E-Business',
           style: GoogleFonts.kodchasan(
             fontSize: 26,
             fontWeight: FontWeight.w800,
@@ -24,7 +24,7 @@ class ArnoDorian extends StatelessWidget {
           child: Column(
             children: [
               const AssetImageWidget(
-                imagePath: 'assets/images/arno.png',
+                imagePath: 'assets/images/ebisnis3.png',
                 height: 300,
                 width: 300,
                 fit: BoxFit.cover,
@@ -33,7 +33,7 @@ class ArnoDorian extends StatelessWidget {
                 height: 20,
               ),
               const Text(
-                'The User Interface (UI) course is designed to equip participants with the essential knowledge and skills to create visually appealing and functional interfaces for digital products.',
+                'The E-Business course is designed to provide participants with a comprehensive understanding of electronic business (e-business) concepts, strategies, and technologies. This course focuses on exploring the opportunities and challenges of conducting business in the digital age, as well as equipping participants with the knowledge and skills necessary to leverage technology for success in e-business ventures.',
                 style: TextStyle(
                   fontSize: 18,
                 ),

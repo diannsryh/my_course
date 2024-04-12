@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_course/component/assets_image_widget.dart';
 
-class ArnoDorian extends StatelessWidget {
-  const ArnoDorian({super.key});
+class MobileScreen extends StatelessWidget {
+  const MobileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'User Interface',
+          'Mobile Programming',
           style: GoogleFonts.kodchasan(
             fontSize: 26,
             fontWeight: FontWeight.w800,
@@ -24,7 +24,7 @@ class ArnoDorian extends StatelessWidget {
           child: Column(
             children: [
               const AssetImageWidget(
-                imagePath: 'assets/images/arno.png',
+                imagePath: 'assets/images/mobile3.png',
                 height: 300,
                 width: 300,
                 fit: BoxFit.cover,
@@ -33,7 +33,7 @@ class ArnoDorian extends StatelessWidget {
                 height: 20,
               ),
               const Text(
-                'The User Interface (UI) course is designed to equip participants with the essential knowledge and skills to create visually appealing and functional interfaces for digital products.',
+                'Mobile Programming is designed to provide a comprehensive understanding of mobile application development using Android and/or iOS platforms. The course combines theory and practice with an approach that emphasizes the development of practical skills.',
                 style: TextStyle(
                   fontSize: 18,
                 ),
