@@ -130,9 +130,7 @@ class _AddCourseState extends State<AddCourse> {
                   createOrUpdateCourses();
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: !isUpdate
-                      ? Colors.purple
-                      : Colors.blue, // Set background color
+                  backgroundColor: !isUpdate ? Colors.purple : Colors.blue,
                   foregroundColor: Colors.white,
                 ),
                 child: !isUpdate ? const Text('Save') : const Text('Update')),
@@ -144,7 +142,7 @@ class _AddCourseState extends State<AddCourse> {
                 cancelTextEditing();
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.orange, // Set background color
+                backgroundColor: Colors.orange,
                 foregroundColor: Colors.white,
               ),
               child: const Text('Cancel',
@@ -176,13 +174,11 @@ class _AddCourseState extends State<AddCourse> {
     return ListView.builder(
       itemCount: courses.length,
       itemBuilder: (context, index) => Slidable(
-        // Customize appearance and behavior as needed
         key: ValueKey(index),
         endActionPane: ActionPane(
           motion: const ScrollMotion(),
           children: [
             SlidableAction(
-              // An action can be bigger than the others.
               onPressed: (context) => editFormCourses(context, courses[index]),
               backgroundColor: Colors.blue,
               foregroundColor: Color.fromARGB(255, 254, 254, 254),
@@ -190,7 +186,6 @@ class _AddCourseState extends State<AddCourse> {
               label: 'Edit',
             ),
             SlidableAction(
-              // An action can be bigger than the others.
               onPressed: (context) =>
                   deleteCourses(context, courses[index].id!),
               backgroundColor: Colors.red,

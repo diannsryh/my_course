@@ -33,7 +33,8 @@ class MyApp extends StatelessWidget {
       ),
       home: const IntroScreen(),
       routes: {
-        '/login-screen': (context) => const LoginScreen(),
+        '/login-screen': (context) =>
+            const LoginScreen(), //define route or navigation each screens
         '/create-account': (context) => const CreateAccount(),
         '/dashboard': (context) => Dashboard(),
         '/home-screen': (context) => HomeScreen(),
@@ -59,20 +60,22 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int activeIndex = 0;
+  int activeIndex =
+      0; //var use to save active screen index, initialize by 0 meanns that the fisrt screen in list  screens is set as default.
   // int _selectedIndex = 0;
 
   final List<Widget> screens = [
-    Dashboard(),
-    const MyCourses(),
-    const ProfileScreen(),
+    //a list of widget objects that represent the various screens available in the application.
+    Dashboard(), //index 0
+    const MyCourses(), //index 1
+    const ProfileScreen(), //index 2
   ];
 
-  void _onItemTapped(int index) {
-    setState(() {
-      activeIndex = index;
-    });
-  }
+  // void _onItemTapped(int index) {//method called when user on tap item in navigation
+  //   setState(() {//to update the state index
+  //     activeIndex = index;//active index will updated according to the idex selected
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -81,11 +84,11 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar: AppBar(
           title: null,
           backgroundColor: Colors.transparent,
-          elevation: 0.0, // remove box shadow
+          elevation: 0.0,
           iconTheme:
               const IconThemeData(color: Colors.purple), // recolor the icon
         ),
-        body: screens[activeIndex],
+        body: screens[activeIndex], //body akan menampilkan active index
         bottomNavigationBar: CurvedNavigationBar(
             backgroundColor: Constants.scaffoldBackgroundColor,
             buttonBackgroundColor: Constants.primaryColor,
@@ -113,6 +116,7 @@ class _MyHomePageState extends State<MyHomePage> {
             }),
         drawer: Drawer(
             child: ListView(
+          //is used to display a list of items in order, either vertically or horizontally.
           padding: EdgeInsets.zero,
           children: [
             const DrawerHeader(
@@ -129,6 +133,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             ListTile(
+              //combination with list view to make items organized
               title: const Text('API'),
               onTap: () {
                 Navigator.push(context,
