@@ -6,7 +6,7 @@ class IntroScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
+      body: Stack( //use to make text or image overlap each other
         children: [
           Image.asset('assets/images/intro(2).png'),
           SafeArea(
@@ -15,11 +15,11 @@ class IntroScreen extends StatelessWidget {
             children: [
               Padding(
                 padding: const EdgeInsets.only(top: 70, bottom: 20, left: 7),
-                child: Image.asset('assets/images/Logo.png'),
+                child: Image.asset('assets/images/Logo.png'), //my course
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 7),
-                child: Image.asset('assets/images/Logo2.png'),
+                child: Image.asset('assets/images/Logo2.png'), //upgrade ypur skills
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 30, bottom: 20, left: 7),

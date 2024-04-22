@@ -14,6 +14,8 @@ import 'package:my_course/screens/e_business.dart';
 import 'package:my_course/screens/news_screen.dart';
 import 'package:my_course/screens/addcourse_screen.dart';
 import 'package:my_course/utils/constants.dart';
+import 'package:my_course/screens/routes/DataScreen.dart';
+import 'package:my_course/screens/routes/FormScreen/form_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -46,7 +48,9 @@ class MyApp extends StatelessWidget {
         '/e-business': (context) => const EBusiness(),
         '/news-screen': (context) => const NewsScreen(),
         '/add-course': (context) => const AddCourse(),
-        '/my-homepage': (context) => MyHomePage()
+        '/my-homepage': (context) => MyHomePage(),
+        '/form-screen': (context) => FormScreen(),
+        '/data-screen': (context) => DatasScreen()
       },
     );
   }
@@ -88,7 +92,7 @@ class _MyHomePageState extends State<MyHomePage> {
           iconTheme:
               const IconThemeData(color: Colors.purple), // recolor the icon
         ),
-        body: screens[activeIndex], //body akan menampilkan active index
+        body: screens[activeIndex], //body will display the current active index
         bottomNavigationBar: CurvedNavigationBar(
             backgroundColor: Constants.scaffoldBackgroundColor,
             buttonBackgroundColor: Constants.primaryColor,
@@ -145,6 +149,13 @@ class _MyHomePageState extends State<MyHomePage> {
               onTap: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => AddCourse()));
+              },
+            ),
+            ListTile(
+              title: const Text('Data Screen'),
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => DatasScreen()));
               },
             ),
           ],

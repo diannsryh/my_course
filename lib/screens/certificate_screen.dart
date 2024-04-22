@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:my_course/certifpages/uiuxcertif.dart';
 
 class CertificateScreen extends StatefulWidget {
   const CertificateScreen({super.key});
@@ -12,30 +12,72 @@ class _CertificateScreenState extends State<CertificateScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 167, 167, 167),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 14),
+          padding: const EdgeInsets.symmetric(horizontal: 14),
           child: Column(
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Padding(
-                    padding: EdgeInsets.only(top: 13),
-                    child: Text(
-                      'My Certificates',
-                      style: GoogleFonts.kodchasan(
-                        fontSize: 26,
-                        fontWeight: FontWeight.w800,
-                        color: const Color.fromARGB(255, 140, 31, 236),
-                      ),
-                    ),
-                  ),
-                ],
+              InkWell(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => UiuxCertif()));
+                },
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 15),
+                  child: Column(children: [
+                    Ink(child: Image.asset('assets/images/uiux_certif.png')),
+                  ]),
+                ),
               ),
-              const SizedBox(height: 250),
-              const Text('There is no certificate yet',
-                  style: TextStyle(color: Color.fromARGB(255, 107, 107, 107)))
+              InkWell(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => UiuxCertif()));
+                },
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 15),
+                  child: Column(children: [
+                    Ink(child: Image.asset('assets/images/uiux_certif.png')),
+                  ]),
+                ),
+              ),
+              InkWell(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => UiuxCertif()));
+                },
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 15),
+                  child: Column(children: [
+                    Ink(child: Image.asset('assets/images/uiux_certif.png')),
+                  ]),
+                ),
+              ),
+              InkWell(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => UiuxCertif()));
+                },
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 15),
+                  child: Column(children: [
+                    Ink(child: Image.asset('assets/images/uiux_certif.png')),
+                  ]),
+                ),
+              ),
+              InkWell(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => UiuxCertif()));
+                },
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 15),
+                  child: Column(children: [
+                    Ink(child: Image.asset('assets/images/uiux_certif.png')),
+                  ]),
+                ),
+              ),
             ],
           ),
         ),

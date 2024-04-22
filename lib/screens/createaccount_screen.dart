@@ -36,14 +36,14 @@ class CreateAccount extends StatelessWidget {
               height: 20,
             ),
             TextField(
-              controller: emailController,
+              controller: emailController, //use to control input, in this case used to enter email address
               style: const TextStyle(
                 fontWeight: FontWeight.normal,
                 fontSize: 16,
                 color: Color.fromARGB(255, 110, 110, 110),
               ),
-              keyboardType: TextInputType.emailAddress,
-              textInputAction: TextInputAction.next,
+              keyboardType: TextInputType.emailAddress, //use to display email address on keyboard 
+              textInputAction: TextInputAction.next, //going to the next textfield
               decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
                     borderSide: const BorderSide(
@@ -74,7 +74,7 @@ class CreateAccount extends StatelessWidget {
               ),
               keyboardType: TextInputType.visiblePassword,
               textInputAction: TextInputAction.next,
-              obscureText: true,
+              obscureText: true,//to hide the text
               decoration: InputDecoration(
                   suffixIcon: IconButton(
                       onPressed: () {}, icon: Icon(Icons.visibility)),

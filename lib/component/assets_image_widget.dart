@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class AssetImageWidget extends StatelessWidget {
+class AssetImageWidget extends StatelessWidget {//display images from assets, we call it when we want to use image 
   final String imagePath;
   final double? width;
   final double? height;

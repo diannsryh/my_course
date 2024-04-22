@@ -16,7 +16,7 @@ class ProfileScreen extends StatelessWidget {
           children: [
             SizedBox(height: 110),
             TabBar(tabs: [
-              Tab(
+              Tab(//index 0
                 icon: Column(
                   children: [
                     Icon(Icons.person),
@@ -24,7 +24,7 @@ class ProfileScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              Tab(
+              Tab(//index 1
                 icon: Column(
                   children: [
                     Icon(Icons.book),
