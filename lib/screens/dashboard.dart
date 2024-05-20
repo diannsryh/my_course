@@ -135,7 +135,7 @@ class _DashboardState extends State<Dashboard> {
                                   ),
                                   SizedBox(height: 5),
                                   Text(
-                                    'FREE',
+                                    'Rp.50000',
                                     style: TextStyle(
                                       fontSize: 20,
                                       fontWeight: FontWeight.bold,

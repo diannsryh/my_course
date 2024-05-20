@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:my_course/cubit/counter_cubit.dart';
 import 'package:my_course/screens/intro_screen.dart';
 import 'package:my_course/screens/login_screen.dart';
 import 'package:my_course/screens/createaccount_screen.dart';
@@ -13,9 +15,12 @@ import 'package:my_course/screens/certificate_screen.dart';
 import 'package:my_course/screens/e_business.dart';
 import 'package:my_course/screens/news_screen.dart';
 import 'package:my_course/screens/addcourse_screen.dart';
+import 'package:my_course/screens/UTS/cs_screen.dart';
+import 'package:my_course/screens/routes/counter_screen.dart';
 import 'package:my_course/utils/constants.dart';
 import 'package:my_course/screens/routes/DataScreen.dart';
 import 'package:my_course/screens/routes/FormScreen/form_screen.dart';
+import 'package:my_course/screens/routes/welcome_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,32 +32,39 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const IntroScreen(),
-      routes: {
-        '/login-screen': (context) =>
-            const LoginScreen(), //define route or navigation each screens
-        '/create-account': (context) => const CreateAccount(),
-        '/dashboard': (context) => Dashboard(),
-        '/home-screen': (context) => HomeScreen(),
-        '/my-courses': (context) => const MyCourses(),
-        '/profile': (context) => const ProfileScreen(),
-        '/mobile-screen': (context) => const MobileScreen(),
-        '/interpersonal-skills': (context) => const InterpersonalSkills(),
-        '/certificate-screen': (context) => const CertificateScreen(),
-        '/e-business': (context) => const EBusiness(),
-        '/news-screen': (context) => const NewsScreen(),
-        '/add-course': (context) => const AddCourse(),
-        '/my-homepage': (context) => MyHomePage(),
-        '/form-screen': (context) => FormScreen(),
-        '/data-screen': (context) => DatasScreen()
-      },
-    );
+    return MultiBlocProvider(
+        //menyiarkan seluruh perubahan
+        providers: [
+          BlocProvider<CounterCubit>(create: (context) => CounterCubit())
+        ],
+        child: MaterialApp(
+          title: 'Flutter Demo',
+          theme: ThemeData(
+            colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+            useMaterial3: true,
+          ),
+          home: const IntroScreen(),
+          routes: {
+            '/login-screen': (context) =>
+                const LoginScreen(), //define route or navigation each screens
+            '/create-account': (context) => const CreateAccount(),
+            '/dashboard': (context) => Dashboard(),
+            '/home-screen': (context) => HomeScreen(),
+            '/my-courses': (context) => const MyCourses(),
+            '/profile': (context) => const ProfileScreen(),
+            '/mobile-screen': (context) => const MobileScreen(),
+            '/interpersonal-skills': (context) => const InterpersonalSkills(),
+            '/certificate-screen': (context) => const CertificateScreen(),
+            '/e-business': (context) => const EBusiness(),
+            '/news-screen': (context) => const NewsScreen(),
+            '/add-course': (context) => const AddCourse(),
+            '/my-homepage': (context) => MyHomePage(),
+            '/form-screen': (context) => FormScreen(),
+            '/data-screen': (context) => DatasScreen(),
+            '/cs-screen': (context) => CsScreen(),
+            '/welcome-screen': (context) => const WelcomeScreen()
+          },
+        ));
   }
 }
 
@@ -156,6 +168,27 @@ class _MyHomePageState extends State<MyHomePage> {
               onTap: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => DatasScreen()));
+              },
+            ),
+            ListTile(
+              title: const Text('Customer Service'),
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => CsScreen()));
+              },
+            ),
+            ListTile(
+              title: const Text('Counter Screen'),
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => CounterScreen()));
+              },
+            ),
+            ListTile(
+              title: const Text('Welcome Screen'),
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => WelcomeScreen()));
               },
             ),
           ],

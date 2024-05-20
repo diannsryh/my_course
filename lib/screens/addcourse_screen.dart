@@ -108,66 +108,80 @@ class _AddCourseState extends State<AddCourse> {
               TextStyle(color: !isUpdate ? Colors.purple : Colors.blue)),
     );
     return Scaffold(
-        body: Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      children: [
-        const SizedBox(height: 30),
-        Form(
-            key: _formStateKey,
-            child: Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: textFormField,
-                ),
-              ],
-            )),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            ElevatedButton(
-                onPressed: () {
-                  createOrUpdateCourses();
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: !isUpdate ? Colors.purple : Colors.blue,
-                  foregroundColor: Colors.white,
-                ),
-                child: !isUpdate ? const Text('Save') : const Text('Update')),
-            const SizedBox(
-              width: 10,
-            ),
-            ElevatedButton(
-              onPressed: () {
-                cancelTextEditing();
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.orange,
-                foregroundColor: Colors.white,
-              ),
-              child: const Text('Cancel',
-                  style: TextStyle(
-                    color: Colors.white,
-                  )),
-            )
-          ],
+        appBar: AppBar(
+          title: const Text('Add Courses'),
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back),
+            onPressed: () {
+              Navigator.pushReplacementNamed(context, '/my-homepage');
+            },
+          ),
         ),
-        const Divider(),
-        Expanded(
-            child: FutureBuilder(
-          future: courses,
-          builder: (context, snapshot) {
-            if (!snapshot.hasData) {
-              return const Text('No Data');
-            }
-            if (snapshot.hasData) {
-              return generateList(snapshot.data!);
-            }
-            return const CircularProgressIndicator();
-          },
-        ))
-      ],
-    ));
+        body: Padding(
+          padding: const EdgeInsets.all(10),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Form(
+                  key: _formStateKey,
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: textFormField,
+                      ),
+                    ],
+                  )),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  ElevatedButton(
+                      onPressed: () {
+                        createOrUpdateCourses();
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor:
+                            !isUpdate ? Colors.purple : Colors.blue,
+                        foregroundColor: Colors.white,
+                      ),
+                      child: !isUpdate
+                          ? const Text('Save')
+                          : const Text('Update')),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      cancelTextEditing();
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.orange,
+                      foregroundColor: Colors.white,
+                    ),
+                    child: const Text('Cancel',
+                        style: TextStyle(
+                          color: Colors.white,
+                        )),
+                  )
+                ],
+              ),
+              const Divider(),
+              Expanded(
+                  child: FutureBuilder(
+                future: courses,
+                builder: (context, snapshot) {
+                  if (!snapshot.hasData) {
+                    return const Text('No Data');
+                  }
+                  if (snapshot.hasData) {
+                    return generateList(snapshot.data!);
+                  }
+                  return const CircularProgressIndicator();
+                },
+              ))
+            ],
+          ),
+        ));
   }
 
   Widget generateList(List<Courses> courses) {

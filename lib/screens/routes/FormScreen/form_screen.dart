@@ -109,7 +109,7 @@ class _FormScreenState extends State<FormScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue.shade900,
+      backgroundColor: Color.fromARGB(255, 140, 31, 236),
       appBar: AppBar(
         title: null,
         backgroundColor: Colors.transparent,
@@ -191,13 +191,24 @@ class _FormScreenState extends State<FormScreen> {
                                 // color: Colors.grey[200], // Placeholder color
                                 child: galleryFile == null
                                     ? Center(
-                                        child: Text('Pick your Image here',
-                                            style: GoogleFonts.poppins(
-                                              fontSize: 14,
-                                              color: const Color.fromARGB(
-                                                  255, 124, 122, 122),
-                                              fontWeight: FontWeight.w500,
-                                            )))
+                                        child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          const Icon(
+                                              Icons
+                                                  .add_photo_alternate_outlined,
+                                              color: Colors.grey,
+                                              size: 50),
+                                          Text('Pick your Image here',
+                                              style: GoogleFonts.poppins(
+                                                fontSize: 14,
+                                                color: const Color.fromARGB(
+                                                    255, 124, 122, 122),
+                                                fontWeight: FontWeight.w500,
+                                              )),
+                                        ],
+                                      ))
                                     : Center(
                                         child: Image.file(galleryFile!),
                                       ), // Placeholder text
